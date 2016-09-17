@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding='UTF-8'?>
+<CAMsetup>
+	<thisfile>.\stackup.camset</thisfile>
+	<boardlayers>
+		<layer type="Silkscreen" H="35" Er="0.000">
+			<filename>.\wht_v3-F.SilkS.gto</filename>
+			<filedisp>wht_v3-F.SilkS.gto</filedisp>
+		</layer>
+		<layer type="SolderMask" H="35" Er="0.000">
+			<filename>.\wht_v3-F.Mask.gts</filename>
+			<filedisp>wht_v3-F.Mask.gts</filedisp>
+		</layer>
+		<layer type="Copper" H="35" Negative="DefaultPositive">
+			<filename>.\wht_v3-F.Cu.gtl</filename>
+			<filedisp>wht_v3-F.Cu.gtl</filedisp>
+		</layer>
+		<layer type="Prepreg" H="1390" Er="4.800">
+		</layer>
+		<layer type="Copper" H="35" Negative="DefaultPositive">
+			<filename>.\wht_v3-B.Cu.gbl</filename>
+			<filedisp>wht_v3-B.Cu.gbl</filedisp>
+		</layer>
+		<layer type="SolderMask" H="35" Er="0.000">
+			<filename>.\wht_v3-B.Mask.gbs</filename>
+			<filedisp>wht_v3-B.Mask.gbs</filedisp>
+		</layer>
+		<layer type="Silkscreen" H="35" Er="0.000">
+			<filename>.\wht_v3-B.SilkS.gbo</filename>
+			<filedisp>wht_v3-B.SilkS.gbo</filedisp>
+		</layer>
+		<layer type="BoardOutline" H="1600">
+			<filename>.\wht_v3-Edge.Cuts.gm1</filename>
+			<filedisp>wht_v3-Edge.Cuts.gm1</filedisp>
+		</layer>
+	</boardlayers>
+
+	<boarddrillplates>
+		<drillplate from="top" to="btm" plated="yes">
+			<filename>.\wht_v3.drl</filename>
+			<filedisp>wht_v3.drl</filedisp>
+		</drillplate>
+	</boarddrillplates>
+
+	<GerberSetup Incremental='no' OmitTrailingZeros='no' Milimeters='no' Len1='2' Len2='3'/>
+	<NCDSetup Guess='yes' Incremental='no' OmitTrailingZeros='no' Milimeters='no' Len1='2' Len2='3'/>
+	<IPC356Setup AutoUnits='1' AutoMagnitude='1' LongPinID='yes' CpyFromDrill='yes'/>
+	<PosSaveRestoreTab>
+	</PosSaveRestoreTab>
+
+</CAMsetup>

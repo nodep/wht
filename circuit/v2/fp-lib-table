@@ -1,0 +1,4 @@
+(fp_lib_table
+  (lib (name wht)(type KiCad)(uri ${KIPRJMOD}/../wht.pretty)(options "")(descr wht))
+  (lib (name oshw_logo)(type Legacy)(uri ${KIPRJMOD}/../OSHW-logo.mod)(options "")(descr ""))
+)

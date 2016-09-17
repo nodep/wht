@@ -1,0 +1,4 @@
+(fp_lib_table
+  (lib (name wht)(type KiCad)(uri ${KIPRJMOD}/../wht.pretty)(options "")(descr ""))
+  (lib (name kbd_module)(type KiCad)(uri "$(KIPRJMOD)\\kbd_module.pretty")(options "")(descr ""))
+)

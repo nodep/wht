@@ -1,0 +1,115 @@
+Cmp-Mod V01 Created by Cvpcb (2015-05-08 BZR 5647)-product   date = 8/2/2015 2:16:53 PM
+
+BeginCmp
+TimeStamp = /53C5091B;
+Reference = BT1;
+ValeurCmp = BAT_CR123;
+IdModule  = wht:CR123;
+EndCmp
+
+BeginCmp
+TimeStamp = /556FF42D;
+Reference = C1;
+ValeurCmp = 1uF;
+IdModule  = wht:c_1206;
+EndCmp
+
+BeginCmp
+TimeStamp = /5549D347;
+Reference = D1;
+ValeurCmp = LED_RGB_CC;
+IdModule  = wht:LED_RGB_CC;
+EndCmp
+
+BeginCmp
+TimeStamp = /55BE1E61;
+Reference = JP1;
+ValeurCmp = 1;
+IdModule  = wht:JumperTHT;
+EndCmp
+
+BeginCmp
+TimeStamp = /55BE0DA2;
+Reference = JP2;
+ValeurCmp = 2;
+IdModule  = wht:JumperTHT;
+EndCmp
+
+BeginCmp
+TimeStamp = /55BE24C7;
+Reference = JP3;
+ValeurCmp = 1;
+IdModule  = wht:JumperTHT;
+EndCmp
+
+BeginCmp
+TimeStamp = /53A87AFB;
+Reference = M1;
+ValeurCmp = NRF24LE1_SMALL;
+IdModule  = wht:NRF24LE1_SMALL;
+EndCmp
+
+BeginCmp
+TimeStamp = /5549E425;
+Reference = Q1;
+ValeurCmp = IRLML6344;
+IdModule  = wht:SOT23_WHT;
+EndCmp
+
+BeginCmp
+TimeStamp = /5549C534;
+Reference = RP1;
+ValeurCmp = R_PACK4;
+IdModule  = wht:Resistor_Array_x4_1206;
+EndCmp
+
+BeginCmp
+TimeStamp = /55BE0EAA;
+Reference = SL1;
+ValeurCmp = SEL_P4;
+IdModule  = wht:SelectTHT;
+EndCmp
+
+BeginCmp
+TimeStamp = /55BE0E20;
+Reference = SL2;
+ValeurCmp = SEL_P3;
+IdModule  = wht:SelectTHT;
+EndCmp
+
+BeginCmp
+TimeStamp = /55BE0EEA;
+Reference = SL3;
+ValeurCmp = SEL_P8;
+IdModule  = wht:SelectTHT;
+EndCmp
+
+BeginCmp
+TimeStamp = /53AB20EC;
+Reference = SW1;
+ValeurCmp = SW_PUSH;
+IdModule  = wht:TACTILE-PTH;
+EndCmp
+
+BeginCmp
+TimeStamp = /53AAC4C3;
+Reference = SW2;
+ValeurCmp = SWITCH_INV;
+IdModule  = wht:ESP2010_switch;
+EndCmp
+
+BeginCmp
+TimeStamp = /53A87671;
+Reference = U1;
+ValeurCmp = NRF24LE1_PROG;
+IdModule  = wht:NRF_ICSP_PogoPinsHoles;
+EndCmp
+
+BeginCmp
+TimeStamp = /55BE067D;
+Reference = U2;
+ValeurCmp = GY87_GY521;
+IdModule  = wht:GY87_GY521;
+EndCmp
+
+EndListe

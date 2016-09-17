@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding='UTF-8'?>
+<CAMsetup>
+	<thisfile>.\stackup.camset</thisfile>
+	<boardlayers>
+		<layer type="Silkscreen" H="35" Er="0.000">
+			<filename>.\pogopins_panel-F_SilkS.gto</filename>
+			<filedisp>pogopins_panel-F_SilkS.gto</filedisp>
+		</layer>
+		<layer type="SolderMask" H="35" Er="0.000">
+			<filename>.\pogopins_panel-F_Mask.gts</filename>
+			<filedisp>pogopins_panel-F_Mask.gts</filedisp>
+		</layer>
+		<layer type="Copper" H="35" Negative="DefaultPositive">
+			<filename>.\pogopins_panel-F_Cu.gtl</filename>
+			<filedisp>pogopins_panel-F_Cu.gtl</filedisp>
+		</layer>
+		<layer type="Prepreg" H="1390" Er="4.800">
+		</layer>
+		<layer type="Copper" H="35" Negative="DefaultPositive">
+			<filename>.\pogopins_panel-B_Cu.gbl</filename>
+			<filedisp>pogopins_panel-B_Cu.gbl</filedisp>
+		</layer>
+		<layer type="SolderMask" H="35" Er="0.000">
+			<filename>.\pogopins_panel-B_Mask.gbs</filename>
+			<filedisp>pogopins_panel-B_Mask.gbs</filedisp>
+		</layer>
+		<layer type="Silkscreen" H="35" Er="0.000">
+			<filename>.\pogopins_panel-B_SilkS.gbo</filename>
+			<filedisp>pogopins_panel-B_SilkS.gbo</filedisp>
+		</layer>
+		<layer type="BoardOutline" H="1600">
+			<filename>.\pogopins_panel-Edge_Cuts.gbr</filename>
+			<filedisp>pogopins_panel-Edge_Cuts.gbr</filedisp>
+		</layer>
+	</boardlayers>
+
+	<boarddrillplates>
+		<drillplate from="top" to="btm" plated="yes">
+			<filename>.\pogopins_panel.drl</filename>
+			<filedisp>pogopins_panel.drl</filedisp>
+		</drillplate>
+	</boarddrillplates>
+
+	<GerberSetup Incremental='no' OmitTrailingZeros='no' Milimeters='no' Len1='2' Len2='3'/>
+	<NCDSetup Guess='yes' Incremental='no' OmitTrailingZeros='no' Milimeters='no' Len1='2' Len2='3'/>
+	<IPC356Setup AutoUnits='1' AutoMagnitude='1' LongPinID='yes' CpyFromDrill='yes'/>
+	<PosSaveRestoreTab>
+	</PosSaveRestoreTab>
+
+</CAMsetup>

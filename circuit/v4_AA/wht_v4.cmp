@@ -1,0 +1,157 @@
+Cmp-Mod V01 Created by Cvpcb (2015-05-08 BZR 5647)-product   date = 8/1/2015 4:06:51 PM
+
+BeginCmp
+TimeStamp = /53C5091B;
+Reference = BT1;
+ValeurCmp = BAT_AA;
+IdModule  = wht:BATT_HOLDER_AAx1_KEYSTONE_1028;
+EndCmp
+
+BeginCmp
+TimeStamp = /5559F305;
+Reference = C1;
+ValeurCmp = 4.7uF;
+IdModule  = wht:Capacitor_SMD0805_HandSoldering;
+EndCmp
+
+BeginCmp
+TimeStamp = /5559F568;
+Reference = C2;
+ValeurCmp = 10uF;
+IdModule  = wht:c_1206;
+EndCmp
+
+BeginCmp
+TimeStamp = /555AFE3C;
+Reference = D1;
+ValeurCmp = LED_RGB_CC;
+IdModule  = wht:LED_RGB_CC;
+EndCmp
+
+BeginCmp
+TimeStamp = /5554D352;
+Reference = D2;
+ValeurCmp = DIODESCH;
+IdModule  = wht:Diode-MiniMELF_Handsoldering;
+EndCmp
+
+BeginCmp
+TimeStamp = /5570406B;
+Reference = JP1;
+ValeurCmp = 1;
+IdModule  = wht:JumperTHT;
+EndCmp
+
+BeginCmp
+TimeStamp = /557039B1;
+Reference = JP2;
+ValeurCmp = 1;
+IdModule  = wht:JumperTHT;
+EndCmp
+
+BeginCmp
+TimeStamp = /55704C9F;
+Reference = JP3;
+ValeurCmp = 2;
+IdModule  = wht:JumperTHT;
+EndCmp
+
+BeginCmp
+TimeStamp = /5554A9A2;
+Reference = L1;
+ValeurCmp = 4.7uH;
+IdModule  = wht:INDUCTOR_DL16;
+EndCmp
+
+BeginCmp
+TimeStamp = /53A87AFB;
+Reference = M1;
+ValeurCmp = NRF24LE1_SMALL;
+IdModule  = wht:NRF24LE1_SMALL;
+EndCmp
+
+BeginCmp
+TimeStamp = /5554B6DC;
+Reference = R1;
+ValeurCmp = 562K;
+IdModule  = wht:Resistor_SMD0805_HandSoldering;
+EndCmp
+
+BeginCmp
+TimeStamp = /5554B775;
+Reference = R2;
+ValeurCmp = 330K;
+IdModule  = wht:Resistor_SMD0805_HandSoldering;
+EndCmp
+
+BeginCmp
+TimeStamp = /5549C534;
+Reference = RP1;
+ValeurCmp = R_PACK4;
+IdModule  = wht:Resistor_Array_x4_1206;
+EndCmp
+
+BeginCmp
+TimeStamp = /55704AF0;
+Reference = SL1;
+ValeurCmp = SEL_P4;
+IdModule  = wht:SelectTHT;
+EndCmp
+
+BeginCmp
+TimeStamp = /557034F6;
+Reference = SL2;
+ValeurCmp = SEL_P3;
+IdModule  = wht:SelectTHT;
+EndCmp
+
+BeginCmp
+TimeStamp = /55704E7F;
+Reference = SL3;
+ValeurCmp = SEL_P8;
+IdModule  = wht:SelectTHT;
+EndCmp
+
+BeginCmp
+TimeStamp = /53AAC4C3;
+Reference = SW1;
+ValeurCmp = SWITCH_INV;
+IdModule  = wht:ESP2010_switch;
+EndCmp
+
+BeginCmp
+TimeStamp = /53AB20EC;
+Reference = SW2;
+ValeurCmp = SW_PUSH;
+IdModule  = wht:TACTILE-PTH;
+EndCmp
+
+BeginCmp
+TimeStamp = /53A87671;
+Reference = U1;
+ValeurCmp = NRF24LE1_PROG;
+IdModule  = wht:NRF_ICSP_RibbonCable;
+EndCmp
+
+BeginCmp
+TimeStamp = /557032BB;
+Reference = U2;
+ValeurCmp = GY87_GY521;
+IdModule  = wht:GY87_GY521;
+EndCmp
+
+BeginCmp
+TimeStamp = /55549ED9;
+Reference = U3;
+ValeurCmp = MCP1640;
+IdModule  = wht:SOT23_6_WHT;
+EndCmp
+
+BeginCmp
+TimeStamp = /557014AA;
+Reference = U4;
+ValeurCmp = DBG_CONN;
+IdModule  = wht:Pin_Header_Straight_1x03;
+EndCmp
+
+EndListe

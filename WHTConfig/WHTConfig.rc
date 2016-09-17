@@ -1,0 +1,337 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include <winresrc.h>
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Neutral resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_NEU)
+LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
+#pragma code_page(1252)
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_ACCELERATORS ACCELERATORS
+BEGIN
+    "T",            IDC_ACC_GENERATE_TEST_DATA, VIRTKEY, ALT, NOINVERT
+    "R",            IDC_ACC_CLEAR_MAG_CALIBRATION, VIRTKEY, ALT, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_MAIN_DIALOG DIALOGEX 0, 0, 584, 345
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | WS_MINIMIZEBOX | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Wireless Head Tracker Configuration"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    GROUPBOX        " Head tracker axes ",IDC_STATIC,7,7,570,80
+    LTEXT           "Degrees:",IDC_STATIC,492,15,30,8
+    LTEXT           "Integers:",IDC_STATIC,535,15,31,8
+    LTEXT           "Yaw",IDC_STATIC,21,28,14,8
+    CONTROL         "X",IDC_PRG_AXIS_X,"msctls_progress32",PBS_SMOOTH | WS_BORDER,39,25,442,14
+    LTEXT           "",IDC_LBL_AXIS_DEG_X,488,27,40,11,0,WS_EX_RIGHT | WS_EX_STATICEDGE
+    LTEXT           "",IDC_LBL_AXIS_NUM_X,535,27,32,11,0,WS_EX_RIGHT | WS_EX_STATICEDGE
+    LTEXT           "Roll",IDC_STATIC,23,48,12,8
+    CONTROL         "Y",IDC_PRG_AXIS_Y,"msctls_progress32",PBS_SMOOTH | WS_BORDER,39,45,442,14
+    LTEXT           "",IDC_LBL_AXIS_DEG_Y,488,47,40,11,0,WS_EX_RIGHT | WS_EX_STATICEDGE
+    LTEXT           "",IDC_LBL_AXIS_NUM_Y,535,47,32,11,0,WS_EX_RIGHT | WS_EX_STATICEDGE
+    LTEXT           "Pitch",IDC_STATIC,19,67,16,8
+    CONTROL         "Z",IDC_PRG_AXIS_Z,"msctls_progress32",PBS_SMOOTH | WS_BORDER,39,64,442,14
+    LTEXT           "",IDC_LBL_AXIS_DEG_Z,488,66,40,11,0,WS_EX_RIGHT | WS_EX_STATICEDGE
+    LTEXT           "",IDC_LBL_AXIS_NUM_Z,535,66,32,11,0,WS_EX_RIGHT | WS_EX_STATICEDGE
+    GROUPBOX        " Dongle settings ",IDC_STATIC,7,91,349,180
+    LTEXT           "Joystick sensitivity",IDC_STATIC,68,104,60,8
+    LTEXT           "Yaw:",IDC_STATIC,15,119,19,8,0,WS_EX_RIGHT
+    CONTROL         "",IDC_SLD_JOYSTICK_SENS_X,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,34,115,142,15
+    LTEXT           "Roll:",IDC_STATIC,16,136,19,8,0,WS_EX_RIGHT
+    CONTROL         "",IDC_SLD_JOYSTICK_SENS_Y,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,34,134,142,15
+    LTEXT           "Pitch:",IDC_STATIC,16,154,19,8,0,WS_EX_RIGHT
+    CONTROL         "",IDC_SLD_JOYSTICK_SENS_Z,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,34,152,142,15
+    LTEXT           "Magnetometer sensitivity:",IDC_STATIC,20,175,59,18,0,WS_EX_RIGHT
+    CONTROL         "",IDC_SLD_MAGNETOMETER_SENS,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,85,175,90,15
+    LTEXT           "Joystick response:",IDC_STATIC,22,200,60,8,0,WS_EX_RIGHT
+    COMBOBOX        IDC_CMB_AXIS_RESPONSE,85,198,76,43,CBS_DROPDOWNLIST | WS_TABSTOP
+    LTEXT           "Tracker orientation:",IDC_STATIC,20,223,64,8
+    COMBOBOX        IDC_CMB_TRACKER_ORIENTATION,85,221,124,43,CBS_DROPDOWNLIST | WS_TABSTOP
+    LTEXT           "Mouse sensitivity",IDC_STATIC,253,104,56,8
+    LTEXT           "X:",IDC_STATIC,198,119,19,8,0,WS_EX_RIGHT
+    CONTROL         "",IDC_SLD_MOUSE_SENS_X,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,222,116,126,15
+    LTEXT           "Y:",IDC_STATIC,197,138,19,8,0,WS_EX_RIGHT
+    CONTROL         "",IDC_SLD_MOUSE_SENS_Y,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,222,134,126,15
+    LTEXT           "Wheel:",IDC_STATIC,191,155,25,8,0,WS_EX_RIGHT
+    CONTROL         "",IDC_SLD_MOUSE_SENS_WHEEL,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | WS_TABSTOP,222,152,126,15
+    LTEXT           "Active devices:",IDC_STATIC,202,179,61,8,0,WS_EX_RIGHT
+    COMBOBOX        IDC_CMB_ACTIVE_DEVICES,265,177,83,75,CBS_DROPDOWNLIST | WS_TABSTOP
+    LTEXT           "Drift correct method:",IDC_STATIC,195,201,68,8,0,WS_EX_RIGHT
+    COMBOBOX        IDC_CMB_YAW_CORRECT_METHOD,265,198,83,63,CBS_DROPDOWNLIST | WS_TABSTOP
+    LTEXT           "Sleep mode:",IDC_STATIC,223,223,40,8
+    COMBOBOX        IDC_CMB_SLEEP_MODE,265,221,84,129,CBS_DROPDOWNLIST | WS_TABSTOP
+    PUSHBUTTON      "curves",IDC_BTN_CUSTOM_CURVE,19,250,50,14,NOT WS_VISIBLE
+    PUSHBUTTON      "&Send settings to dongle",IDC_BTN_DONGLE_SETTINGS,230,245,118,18
+    GROUPBOX        " Voltage monitoring ",IDC_STATIC,7,272,186,55
+    CONTROL         "Audio alert:",IDC_CHK_AUDIO_ALERT,"Button",BS_AUTOCHECKBOX | BS_LEFTTEXT | WS_TABSTOP,39,288,53,10
+    LTEXT           "Low voltage:",IDC_STATIC,35,306,42,8
+    EDITTEXT        IDC_EDT_LOW_VOLTAGE,84,304,45,13,ES_AUTOHSCROLL
+    GROUPBOX        " Calibration ",IDC_STATIC,368,91,209,57
+    LTEXT           "Gyro/accelerometer:",IDC_STATIC,378,107,67,8,0,WS_EX_RIGHT
+    LTEXT           "",IDC_LBL_GYRO_ACCEL_CALIBRATION_STATUS,448,106,69,11,0,WS_EX_STATICEDGE
+    PUSHBUTTON      "&Gyro calib.",IDC_BTN_GYRO_ACCEL_CALIBRATION,523,104,48,14
+    LTEXT           "Magnetometer:",IDC_STATIC,378,127,67,8,0,WS_EX_RIGHT
+    LTEXT           "",IDC_LBL_MAGNETOMETER_CALIBRATION_STATUS,448,126,69,11,0,WS_EX_STATICEDGE
+    PUSHBUTTON      "&Mag. calib.",IDC_BTN_MAG_CALIBRATION,523,124,48,14
+    GROUPBOX        " Recenter binding ",IDC_STATIC,368,151,209,87
+    LTEXT           "Status:",IDC_STATIC,385,167,24,8
+    LTEXT           "",IDC_LBL_RECENTER_BOUND_STATUS,411,166,59,11,0,WS_EX_STATICEDGE
+    LTEXT           "Bound to:",IDC_STATIC,377,183,32,8
+    LTEXT           "",IDC_LBL_RECENTER_BOUND_TO_DEVICE,411,182,157,11,0,WS_EX_STATICEDGE
+    LTEXT           "",IDC_LBL_RECENTER_BOUND_TO_DETAILS,411,198,157,11,0,WS_EX_STATICEDGE
+    PUSHBUTTON      "&Unbind",IDC_BTN_RECENTER_UNBIND,462,216,50,14
+    PUSHBUTTON      "&Bind",IDC_BTN_RECENTER_BIND,519,216,50,14
+    CONTROL         "",IDC_STATUS_BAR,"msctls_statusbar32",0x0,439,328,138,14
+    GROUPBOX        " Disable/enable binding ",IDC_STATIC,368,240,209,87
+    LTEXT           "Status:",IDC_STATIC,385,256,24,8
+    LTEXT           "",IDC_LBL_DISABLE_TGL_BOUND_STATUS,411,255,59,11,0,WS_EX_STATICEDGE
+    LTEXT           "Bound to:",IDC_STATIC,377,272,32,8
+    LTEXT           "",IDC_LBL_DISABLE_TGL_BOUND_TO_DEVICE,411,271,157,11,0,WS_EX_STATICEDGE
+    LTEXT           "",IDC_LBL_DISABLE_TGL_BOUND_TO_DETAILS,411,287,157,11,0,WS_EX_STATICEDGE
+    PUSHBUTTON      "&Unbind",IDC_BTN_DISABLE_TGL_UNBIND,462,306,50,14
+    PUSHBUTTON      "&Bind",IDC_BTN_DISABLE_TGL_BIND,519,306,50,14
+    LTEXT           "",IDC_LBL_IS_ENABLED,509,255,59,11,0,WS_EX_STATICEDGE
+END
+
+IDD_MAGNETOMETER_CALIB DIALOGEX 0, 0, 749, 418
+STYLE DS_SETFONT | DS_CENTER | WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+CAPTION "x"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    GROUPBOX        " Raw magnetometer samples ",IDC_STATIC,7,7,109,99
+    RTEXT           "",IDC_LBL_NUM_SAMPLES,79,21,29,11,0,WS_EX_STATICEDGE
+    CONTROL         "Filter points:",IDC_CHK_FILTER_SAMPLES,"Button",BS_AUTOCHECKBOX | BS_LEFTTEXT | WS_TABSTOP,34,35,53,10
+    PUSHBUTTON      "Start sampling",IDC_BTN_TOGGLE_SAMPLING,15,48,93,14
+    PUSHBUTTON      "Load",IDC_BTN_LOAD_RAW_POINTS,15,66,44,14
+    PUSHBUTTON      "Save",IDC_BTN_SAVE_RAW_POINTS,65,66,44,14
+    PUSHBUTTON      "Clear all points",IDC_BTN_CLEAR_ALL_SAMPLES,15,84,93,14
+    GROUPBOX        " Calculation ",IDC_STATIC,7,109,109,217
+    CONTROL         "Show dongle calib pts.:",IDC_CHK_SHOW_DONGLE_CALIB_POINTS,
+                    "Button",BS_AUTOCHECKBOX | BS_LEFTTEXT | WS_TABSTOP,17,120,89,10
+    PUSHBUTTON      "Calculate calibration",IDC_BTN_CALCULATE_CALIBRATION,15,132,93,14
+    LTEXT           "Calculated center/radii:",IDC_STATIC,15,150,74,8
+    RTEXT           "",IDC_LBL_CENTER_X_CALC,15,161,30,11,0,WS_EX_STATICEDGE
+    RTEXT           "",IDC_LBL_CENTER_Y_CALC,47,161,30,11,0,WS_EX_STATICEDGE
+    RTEXT           "",IDC_LBL_CENTER_Z_CALC,79,161,30,11,0,WS_EX_STATICEDGE
+    RTEXT           "",IDC_LBL_RADIUS_X,15,173,30,11,0,WS_EX_STATICEDGE
+    RTEXT           "",IDC_LBL_RADIUS_Y,47,173,30,11,0,WS_EX_STATICEDGE
+    RTEXT           "",IDC_LBL_RADIUS_Z,79,173,30,11,0,WS_EX_STATICEDGE
+    LTEXT           "Calculated transformation:",IDC_STATIC,15,188,82,8
+    RTEXT           "",IDC_LBL_MATRIX_1_CALC,15,198,30,11,0,WS_EX_STATICEDGE
+    RTEXT           "",IDC_LBL_MATRIX_2_CALC,47,198,30,11,0,WS_EX_STATICEDGE
+    RTEXT           "",IDC_LBL_MATRIX_3_CALC,79,198,30,11,0,WS_EX_STATICEDGE
+    RTEXT           "",IDC_LBL_MATRIX_4_CALC,15,210,30,11,0,WS_EX_STATICEDGE
+    RTEXT           "",IDC_LBL_MATRIX_5_CALC,47,210,30,11,0,WS_EX_STATICEDGE
+    RTEXT           "",IDC_LBL_MATRIX_6_CALC,79,210,30,11,0,WS_EX_STATICEDGE
+    PUSHBUTTON      "Clear calibrated points",IDC_BTN_CLEAR_CALIBRATED_POINTS,15,226,94,14
+    PUSHBUTTON      "Send calibration to dongle",IDC_BTN_SEND_TO_DONGLE,15,244,94,14
+    LTEXT           "Dongle center:",IDC_STATIC,15,261,48,8
+    RTEXT           "",IDC_LBL_CENTER_X_DONGLE,15,272,30,11,0,WS_EX_STATICEDGE
+    RTEXT           "",IDC_LBL_CENTER_Y_DONGLE,47,272,30,11,0,WS_EX_STATICEDGE
+    RTEXT           "",IDC_LBL_CENTER_Z_DONGLE,79,272,30,11,0,WS_EX_STATICEDGE
+    LTEXT           "Dongle transformation:",IDC_STATIC,15,286,72,8
+    RTEXT           "",IDC_LBL_MATRIX_1_DONGLE,15,297,30,11,0,WS_EX_STATICEDGE
+    RTEXT           "",IDC_LBL_MATRIX_2_DONGLE,47,297,30,11,0,WS_EX_STATICEDGE
+    RTEXT           "",IDC_LBL_MATRIX_3_DONGLE,79,297,30,11,0,WS_EX_STATICEDGE
+    RTEXT           "",IDC_LBL_MATRIX_4_DONGLE,15,309,30,11,0,WS_EX_STATICEDGE
+    RTEXT           "",IDC_LBL_MATRIX_5_DONGLE,47,309,30,11,0,WS_EX_STATICEDGE
+    RTEXT           "",IDC_LBL_MATRIX_6_DONGLE,79,309,30,11,0,WS_EX_STATICEDGE
+    GROUPBOX        " View ",IDC_STATIC,7,330,109,82
+    LTEXT           "Use left-click-drag to rotate the view, mousewheel to zoom in and out.",IDC_STATIC,15,340,93,25
+    PUSHBUTTON      "Reset camera",IDC_BTN_RESET_CAMERA,15,368,93,14
+    LTEXT           "Num. vertices",IDC_STATIC,15,384,44,8
+    RTEXT           "",IDC_LBL_NUMBER_OF_VERTICES,15,394,48,11,0,WS_EX_STATICEDGE
+    LTEXT           "FPS",IDC_STATIC,75,385,14,8
+    RTEXT           "",IDC_LBL_FPS,75,394,21,11,0,WS_EX_STATICEDGE
+    LTEXT           "",IDC_D3D,125,7,617,405
+    LTEXT           "Number of points:",IDC_STATIC,16,22,56,8
+END
+
+IDD_GYRO_ACCEL_CONFIG DIALOGEX 0, 0, 328, 116
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Gyro/accelerometer configuration"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    GROUPBOX        " Yaw drift compensation ",IDC_STATIC,7,7,153,102
+    LTEXT           "Applied compensation:",IDC_STATIC,14,23,73,8,0,WS_EX_RIGHT
+    LTEXT           "New compensation:",IDC_STATIC,14,38,73,8,0,WS_EX_RIGHT
+    LTEXT           "Yaw value:",IDC_STATIC,14,52,73,8,0,WS_EX_RIGHT
+    LTEXT           "Sample count:",IDC_STATIC,14,66,73,8,0,WS_EX_RIGHT
+    LTEXT           "",IDC_LBL_APPLIED_DRIFT_COMP,91,22,60,11,0,WS_EX_RIGHT | WS_EX_STATICEDGE
+    LTEXT           "",IDC_LBL_NEW_DRIFT_COMP,91,37,60,11,0,WS_EX_RIGHT | WS_EX_STATICEDGE
+    LTEXT           "",IDC_LBL_YAW_VALUE,91,51,60,11,0,WS_EX_RIGHT | WS_EX_STATICEDGE
+    LTEXT           "",IDC_LBL_SAMPLE_COUNT,91,65,60,11,0,WS_EX_RIGHT | WS_EX_STATICEDGE
+    PUSHBUTTON      "Reset",IDC_BTN_RESET_DRIFT_COMP,39,86,50,14
+    PUSHBUTTON      "Save",IDC_BTN_SAVE_DRIFT_COMP,101,86,50,14
+    GROUPBOX        " Calibration ",IDC_STATIC,172,7,149,102
+    LTEXT           "Status:",IDC_STATIC,181,22,24,8
+    LTEXT           "Gyro X:",IDC_STATIC,179,39,25,8
+    LTEXT           "Gyro Y:",IDC_STATIC,179,53,25,8
+    LTEXT           "Gyro Z:",IDC_STATIC,179,66,25,8
+    LTEXT           "Accel X:",IDC_STATIC,253,39,26,8
+    LTEXT           "Accel Y:",IDC_STATIC,253,53,26,8
+    LTEXT           "Accel Z:",IDC_STATIC,253,66,26,8
+    LTEXT           "",IDC_LBL_CALIB_STATUS,209,22,96,11,0,WS_EX_STATICEDGE
+    LTEXT           "",IDC_LBL_GYRO_BIAS_X,209,37,29,11,0,WS_EX_RIGHT | WS_EX_STATICEDGE
+    LTEXT           "",IDC_LBL_GYRO_BIAS_Y,209,51,29,11,0,WS_EX_RIGHT | WS_EX_STATICEDGE
+    LTEXT           "",IDC_LBL_GYRO_BIAS_Z,209,65,29,11,0,WS_EX_RIGHT | WS_EX_STATICEDGE
+    LTEXT           "",IDC_LBL_ACCEL_BIAS_X,283,37,29,11,0,WS_EX_RIGHT | WS_EX_STATICEDGE
+    LTEXT           "",IDC_LBL_ACCEL_BIAS_Y,283,51,29,11,0,WS_EX_RIGHT | WS_EX_STATICEDGE
+    LTEXT           "",IDC_LBL_ACCEL_BIAS_Z,283,65,29,11,0,WS_EX_RIGHT | WS_EX_STATICEDGE
+    PUSHBUTTON      "Calibrate",IDC_BTN_RUN_GYRO_CALIBRATE,262,86,50,14
+END
+
+IDD_CUSTOM_CURVES DIALOGEX 0, 0, 593, 363
+STYLE DS_SETFONT | DS_FIXEDSYS | DS_CENTER | WS_MAXIMIZEBOX | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+CAPTION "Dialog"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,7,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,7,26,50,14
+    LTEXT           "",IDC_D3D,63,7,523,349
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_MAIN_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 577
+        VERTGUIDE, 85
+        VERTGUIDE, 115
+        VERTGUIDE, 209
+        VERTGUIDE, 222
+        VERTGUIDE, 348
+        VERTGUIDE, 363
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 342
+    END
+
+    IDD_MAGNETOMETER_CALIB, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 742
+        VERTGUIDE, 15
+        VERTGUIDE, 109
+        VERTGUIDE, 116
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 412
+    END
+
+    IDD_GYRO_ACCEL_CONFIG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 321
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 109
+    END
+
+    IDD_CUSTOM_CURVES, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 586
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 356
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_ICON                ICON                    "icons\\app_icon.ico"
+IDI_MAGNET              ICON                    "icons\\magnet.ico"
+IDI_GYRO                ICON                    "icons\\gyro.ico"
+#endif    // Neutral resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (United States) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include <winresrc.h>\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// WAVE
+//
+
+IDR_WAV_BEEP            WAVE                    "sounds\\beep-07.wav"
+#endif    // English (United States) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

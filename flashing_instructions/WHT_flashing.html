@@ -1,0 +1,85 @@
+<html>
+<title>Wireless Head Tracker flashing</title>
+<body>
+<h1>Wireless Head Tracker flashing instructions</h1>
+
+<h2>Flashing background information</h2>
+
+The WHT consists of two separate devices: the first device is the tracker which contains the motion sensor and a microcontroller (just a fancy word for a low power computer) with a 2.4GHz radio transmitter and receiver. The second device is a USB dongle, another microcontroller and another 2.4GHz radio. This USB dongle receives the movement sensor information from the tracker, then processes it and sends it over the USB port to the PC.<br>
+
+<img src="img/wht_dongle_and_tracker.jpg" title="The USB dongle and the tracker" alt="dongle and tracker">
+
+<p>
+As I've mentioned, the microcontrollers on these two devices are essentially small computers and they contain a little bit of flash memory (16 kilobytes each). This flash memory stores the software these small computers are running. Software running on microcontrollers is often called firmware but in essence it is not much different from software running on your PC or smartphone. And just like any software, the firmware on the tracker and the dongle can be updated to fix bugs or add new features. This update process is called firmware flashing.
+<p>
+In order to flash the two devices, you need to have another device called a flash programmer. It connects to the PC though a USB cable, and to the tracker through a cable, or to the dongle by directly plugging it into the programmer. The programmer receives commands and data from the PC, then sends these commands to the microcontroller on the tracker or dongle which overwrites their flash memory.
+<p>
+The flash programmer with the tracker flashing cable:<br>
+<img src="img/programmer_and_tracker_cable.jpg" title="The flash programmer with cable" alt="flash programmer"> 
+<p>
+The flash programmer does not need drivers, but you will need to wait a few minutes after plugging in the programmer for the first time for Windows to figure that out.
+<p>
+<h2>The necessary software</h2>
+
+The PC software needed to communicate with the flash programmer, the flash images for the dongle and tracker and the WHT configuration program are all contained in the WHT software package. You will have received it together with this document.
+<p>
+The WHT package has three subfolders:
+<ul>
+<li><code>config</code> - the configuration and calibration program.
+<li><code>flashing_instructions</code> - contains these instructions.
+<li><code>flash</code> - contains the files necessary for the flashing process.
+</ul>
+<p>
+The <code>flash</code> folder contains these files:
+<p>
+<ul>
+<li><b>nrfburn.exe</b> - the software which communicates with the flash programmer
+<li><b>flash_dongle.bat</b> - the windows batch file which calls <b>nrfburn.exe</b> with the required parameters to flash the dongle
+<li><b>flash_tracker.bat</b> - the windows batch file which calls <b>nrfburn.exe</b> with the required parameters to flash the tracker
+<li><b>tracker.hex</b> - the tracker flash image
+<li><b>whtdngl.hex</b> - the dongle flash image
+</ul>
+
+<h2>Tracker flashing details</h2>
+
+<ul>
+<li>Remove the battery from the tracker
+<li>Remove the flash programmer from USB (if it is plugged in)
+<li>If the tracker or the dongle is connected to the flash programmer - remove them
+<li>Plug one end of the flashing cable into the tracker and other into the flash programmer
+ <br><img src="img/tracker_prog_cable.jpg" title="The flash programmer with connected to the tracker" alt="flasher and tracker"> 
+<li>Plug the programmer with the tracker attached into USB. If this is the first time you plugged in the programmer into your PC's USB port, wait a minute or two for Windows to recognize the programmer. You will get a "This device is now ready" message from Windows.
+<li>Go to the folder where you unpacked the WHT software and in the <code>flash</code> subfolder double-click the flash_tracker batch file. The flashing process should take about 6 seconds.
+<li>If the flashing is successful you will see this message in the window:
+ <br><img src="img/tracker_flashing_success.png" title="Tracker flashing success" alt="tracker flashing">
+<li>Note that the number of bytes loaded will be different than shown on this image.
+<li>Unplug the flash programmer from USB.
+<li>Remove the programming cable from the programmer and the tracker.
+<li>Put the battery back into the tracker.
+<li>You're done!
+</ul>
+
+<h2>Dongle flashing details</h2>
+
+<ul>
+<li>Remove the flash programmer from USB (if it is plugged in)
+<li>If the tracker or the dongle is connected to the flash programmer - remove them
+<li>Remove the tracker or from the programmer if it is connected to it
+<li>Plug the dongle directly into the programmer's row of pins labelled "LU1+ generic". Make sure that every pin in the programmer is connected to every slot in the dongle.<br>
+ <img src="img/prog_dongle.jpg" title="Flash programmer and dongle" alt="flashing dongle">
+<li>Plug the programmer with the dongle attached into USB. If this is the first time you plugged in the programmer into your PCs USB port, wait a minute or two for Windows to recognize the programmer. You will get a "This device is now ready" message from Windows.
+<li>Go to the folder where you unpacked the WHT software package and run the flash_dongle batch file. The flashing process should take about 6 seconds.
+<li>If the flashing is successful you will see this message in the window:<br>
+ <img src="img/dongle_flashing_success.png" title="Dongle the dongle" alt="dongle flashing">
+<li>Note that the number of bytes loaded will be different than shown on this image.
+<li>Remove the programmer with the dongle from USB 
+<li>Remove the USB dongle from the programmer
+<li>You're done!
+</ul>
+
+After the dongle and tracker have been flashed you will need to recalibrate and reconfigure the devices with the WHTConfig.exe program. You can find the instructions in the video below.
+<p>
+
+<iframe width="800" height="450" src="http://www.youtube.com/embed/GKqRHQjisI0"></iframe>
+</body>
+</html>

@@ -1,0 +1,17 @@
+Cmp-Mod V01 Created by Cvpcb (2015-05-08 BZR 5647)-product   date = 8/2/2015 4:45:47 PM
+
+BeginCmp
+TimeStamp = /55BE2B56;
+Reference = U1;
+ValeurCmp = NRF24LE1_PROG;
+IdModule  = wht:NRF_ICSP_PogoPinsHoles;
+EndCmp
+
+BeginCmp
+TimeStamp = /55BE3082;
+Reference = U2;
+ValeurCmp = NRF24LE1_PROG;
+IdModule  = wht:NRF_ICSP_RibbonCable;
+EndCmp
+
+EndListe

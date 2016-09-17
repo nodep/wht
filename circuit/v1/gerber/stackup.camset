@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding='UTF-8'?>
+<CAMsetup>
+	<thisfile>.\stackup.camset</thisfile>
+	<boardlayers>
+		<layer type="Silkscreen" H="35" Er="0.000">
+			<filename>.\wht-F_SilkS.gto</filename>
+			<filedisp>wht-F_SilkS.gto</filedisp>
+		</layer>
+		<layer type="SolderMask" H="35" Er="0.000">
+			<filename>.\wht-F_Mask.gts</filename>
+			<filedisp>wht-F_Mask.gts</filedisp>
+		</layer>
+		<layer type="Copper" H="35" DefNegative="no">
+			<filename>.\wht-F_Cu.gtl</filename>
+			<filedisp>wht-F_Cu.gtl</filedisp>
+		</layer>
+		<layer type="Prepreg" H="1390" Er="4.800">
+		</layer>
+		<layer type="Copper" H="35" DefNegative="no">
+			<filename>.\wht-B_Cu.gbl</filename>
+			<filedisp>wht-B_Cu.gbl</filedisp>
+		</layer>
+		<layer type="SolderMask" H="35" Er="0.000">
+			<filename>.\wht-B_Mask.gbs</filename>
+			<filedisp>wht-B_Mask.gbs</filedisp>
+		</layer>
+		<layer type="Silkscreen" H="35" Er="0.000">
+			<filename>.\wht-B_SilkS.gbo</filename>
+			<filedisp>wht-B_SilkS.gbo</filedisp>
+		</layer>
+		<layer type="BoardOutline" H="1600">
+		</layer>
+	</boardlayers>
+
+	<boarddrillplates>
+		<drillplate from="top" to="btm" plated="yes">
+			<filename>.\wht.drl</filename>
+			<filedisp>wht.drl</filedisp>
+		</drillplate>
+	</boarddrillplates>
+
+	<GerberSetup Incremental='no' OmitTrailingZeros='no' Milimeters='no' Len1='2' Len2='3'/>
+	<NCDSetup Guess='yes' Incremental='no' OmitTrailingZeros='no' Milimeters='no' Len1='2' Len2='3'/>
+</CAMsetup>
