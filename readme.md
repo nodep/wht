@@ -12,8 +12,12 @@ The USB dongle uses a Nordic Semiconductor nRF24LU1+ 2.4GHz and does most of the
 
 There are several variants of the tracker which vary in size and power source. The most practical variant runs off of a single AA battery and has a 3.3V boost regulator (MCP1640). Another variant uses a CR123A lithium battery without a regulator.
 
-![trackers](https://github.com/nodep/wht/blob/master/trackers.jpg)
+![trackers](trackers.jpg)
 
 The tracker is designed around modules which can be easily found on ebay or similar online shops.
 
-The flas on the Nordic nRF chips can be written using nrfburn: https://github.com/nodep/nrfburn
+The flash on the Nordic nRF chips can be written using nrfburn: https://github.com/nodep/nrfburn
+
+The project contains design files (OpenSCAD) for 3D printed enclosures for the tracker and the dongle.
+
+![trackers in enclosures](enclosures.jpg)
