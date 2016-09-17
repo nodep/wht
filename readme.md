@@ -14,10 +14,10 @@ There are several variants of the tracker which vary in size and power source. T
 
 ![trackers](trackers.jpg)
 
-The tracker is designed around modules which can be easily found on ebay or similar online shops.
+The tracker is designed around modules (MCU and sensors) which can be easily found on ebay or similar online shops.
 
-The flash on the Nordic nRF chips can be written using nrfburn: https://github.com/nodep/nrfburn
+The code can be compiled with sdcc (Small Device C Compiler) and flashed to the Nordic nRF chips using nrfburn: https://github.com/nodep/nrfburn
 
-The project contains design files (OpenSCAD) for 3D printed enclosures for the tracker and the dongle.
+The project contains design files (OpenSCAD and stl) for 3D printed enclosures for the tracker and the dongle.
 
-![trackers in enclosures](enclosures.jpg)
+![trackers and dongles in enclosures](enclosures.jpg)
