@@ -12,7 +12,7 @@ The USB dongle uses a Nordic Semiconductor nRF24LU1+ 2.4GHz and does most of the
 
 There are several variants of the tracker which vary in size and power source. The most practical variant runs off of a single AA battery and has a 3.3V boost regulator (MCP1640). Another variant uses a CR123A lithium battery without a regulator.
 
-![alt tag](trackers.jpg?raw=true "The tracker varians")
+![trackers](https://github.com/nodep/wht/blob/master/trackers.jpg)
 
 The tracker is designed around modules which can be easily found on ebay or similar online shops.
 
