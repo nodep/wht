@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding='UTF-8'?>
 <CAMsetup>
-	<thisfile>C:\avr\wht_src\circuit\kbd_module\gerber\kbd_module_project.camset</thisfile>
+	<thisfile>.\kbd_module_project.camset</thisfile>
 	<morelayertypes>
 	</morelayertypes>
 	<usecolors>
@@ -21,40 +21,40 @@
 	</usecolors>
 	<boardlayers>
 		<layer type="Silkscreen" H="35" Er="0.000" color="00CBFFD4">
-			<filename>C:\avr\wht_src\circuit\kbd_module\gerber\kbd_module-F.SilkS.gto</filename>
+			<filename>.\kbd_module-F.SilkS.gto</filename>
 			<filedisp>kbd_module-F.SilkS.gto</filedisp>
 		</layer>
 		<layer type="SolderMask" H="35" Er="0.000" color="00001700">
-			<filename>C:\avr\wht_src\circuit\kbd_module\gerber\kbd_module-F.Mask.gts</filename>
+			<filename>.\kbd_module-F.Mask.gts</filename>
 			<filedisp>kbd_module-F.Mask.gts</filedisp>
 		</layer>
 		<layer type="Copper" H="35" Negative="DefaultPositive" color="00800000">
-			<filename>C:\avr\wht_src\circuit\kbd_module\gerber\kbd_module-F.Cu.gtl</filename>
+			<filename>.\kbd_module-F.Cu.gtl</filename>
 			<filedisp>kbd_module-F.Cu.gtl</filedisp>
 		</layer>
 		<layer type="Prepreg" H="1390" Er="4.800">
 		</layer>
 		<layer type="Copper" H="35" Negative="DefaultPositive" color="000000D0">
-			<filename>C:\avr\wht_src\circuit\kbd_module\gerber\kbd_module-B.Cu.gbl</filename>
+			<filename>.\kbd_module-B.Cu.gbl</filename>
 			<filedisp>kbd_module-B.Cu.gbl</filedisp>
 		</layer>
 		<layer type="SolderMask" H="35" Er="0.000" color="00000C1E">
-			<filename>C:\avr\wht_src\circuit\kbd_module\gerber\kbd_module-B.Mask.gbs</filename>
+			<filename>.\kbd_module-B.Mask.gbs</filename>
 			<filedisp>kbd_module-B.Mask.gbs</filedisp>
 		</layer>
 		<layer type="Silkscreen" H="35" Er="0.000" color="00CAD2F6">
-			<filename>C:\avr\wht_src\circuit\kbd_module\gerber\kbd_module-B.SilkS.gbo</filename>
+			<filename>.\kbd_module-B.SilkS.gbo</filename>
 			<filedisp>kbd_module-B.SilkS.gbo</filedisp>
 		</layer>
 		<layer type="BoardOutline" H="1600">
-			<filename>C:\avr\wht_src\circuit\kbd_module\gerber\kbd_module-Edge.Cuts.gm1</filename>
+			<filename>.\kbd_module-Edge.Cuts.gm1</filename>
 			<filedisp>kbd_module-Edge.Cuts.gm1</filedisp>
 		</layer>
 	</boardlayers>
 
 	<boarddrillplates>
 		<drillplate from="top" to="btm" plated="yes">
-			<filename>C:\avr\wht_src\circuit\kbd_module\gerber\kbd_module.drl</filename>
+			<filename>.\kbd_module.drl</filename>
 			<filedisp>kbd_module.drl</filedisp>
 		</drillplate>
 	</boarddrillplates>
