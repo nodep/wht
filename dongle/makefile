@@ -13,7 +13,7 @@ else
 endif
 
 CFLAGS    = --model-large -I../tracker -I../mcu-lib -DNRF24LU1
-CFLAGS   += -DDBG_MODE=0 -DPRINTF=printf_fast
+CFLAGS   += -DDBG_MODE=2 -DPRINTF=printf_fast
 CFLAGS   += -DSECOND_ADDR=0
 LFLAGS    = --code-loc 0x0000 --code-size $(CODE_SIZE) --xram-loc 0x8000 --xram-size 0x800
 ASFLAGS   = -plosgff

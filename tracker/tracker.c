@@ -35,9 +35,9 @@ void hw_init()
 						// P0.5 is the push button - input
 						// P0.6 is the MPU interrupt pin - input
 
-	P0CON = 0x55;		// turn on the pullup for the recenter button
+	P0CON = 0b01010101;	// turn on the pullup for the recenter button
 
-#if DBG_MODE
+#if DBG_MODE > 0  &&  MOUSE_BUTTONS == 0
 	// enable FMISO, FMOSI and FCSN as debug output pins
 	P1DIR = 0xfc;
 	P0DIR = 0x70;
@@ -213,6 +213,139 @@ uint8_t check_ack(void)
 	return 0;
 }
 
+#if MOUSE_BUTTONS
+
+uint16_t scan_mouse_buttons(void)
+{
+	const uint16_t stab_delay = 150;
+
+	// P05 FSCK
+	// P07 FMOSI
+	// P10 FMISO
+	// P11 FCSN
+
+	uint16_t button_states = 0;
+
+	//
+	// P05 output - P07, P10, P11 inputs
+	//
+
+	P0DIR = 0b11010111;		// P05 is output (and P03 - TX)
+	P1DIR = 0b11111111;		// all inputs
+
+	// pullups
+	P0CON = 0b01010111;		// P07
+	P1CON = 0b01010000;		// P10
+	P1CON = 0b01010001;		// P11
+
+	P05 = 0;		// drive low
+
+	delay_us(stab_delay);
+
+	if (P07 == 0)
+		button_states |= 0x00100;	// SW9
+	if (P10 == 0)
+		button_states |= 0x00040;	// SW7
+	if (P11 == 0)
+		button_states |= 0x00010;	// SW5
+
+	// pulldowns
+	P0CON = 0b00110111;		// P07
+	P1CON = 0b00110000;		// P10
+	P1CON = 0b00110001;		// P11
+
+	P05 = 1;		// drive high
+
+	delay_us(stab_delay);
+
+	if (P07 == 1)
+		button_states |= 0x00200;	// SW10
+	if (P10 == 1)
+		button_states |= 0x00080;	// SW8
+	if (P11 == 1)
+		button_states |= 0x00020;	// SW6
+
+	P0CON = 0b01110111;		// P07 disable pull up/down
+	
+	//
+	// P07 output - P10, P11 inputs
+	//
+
+	P0DIR = 0b01110111;		// P07 is output (and P03 - TX)
+	P1DIR = 0b11111111;		// all inputs
+
+	// pullups
+	P1CON = 0b01010000;		// P10
+	P1CON = 0b01010001;		// P11
+
+	P07 = 0;		// drive low
+
+	delay_us(stab_delay);
+
+	if (P10 == 0)
+		button_states |= 0x00800;	// SW12
+	if (P11 == 0)
+		button_states |= 0x00002;	// SW2
+
+	// pulldowns
+	P1CON = 0b00110000;		// P10
+	P1CON = 0b00110001;		// P11
+
+	P07 = 1;		// drive high
+
+	delay_us(stab_delay);
+
+	if (P10 == 1)
+		button_states |= 0x00400;	// SW11
+	if (P11 == 1)
+		button_states |= 0x00001;	// SW1
+
+	P1CON = 0b01110000;		// P10 disable pull up/downs
+	
+	//
+	// P10 output - P11 input
+	//
+
+	P0DIR = 0b11110111;		// P03 TX is output
+	P1DIR = 0b11111110;		// P10 output, P11 input
+
+	// pullups
+	P1CON = 0b01010001;		// P11
+
+	P10 = 0;		// drive low
+
+	delay_us(stab_delay);
+
+	if (P11 == 0)
+		button_states |= 0x00008;	// SW4
+
+	// pulldowns
+	P1CON = 0b00110001;		// P11
+
+	P10 = 1;		// drive high
+
+	delay_us(stab_delay);
+
+	if (P11 == 1)
+		button_states |= 0x00004;	// SW3
+
+	P1CON = 0b00110001;		// P11 disable pull up/downs
+
+
+	// leave everything the way it was
+	P0DIR = 0xf0;		// P0.0 P0.1 P0.2 are the LEDs and they are outputs
+                        // P0.3 is the UART TX - output
+						// P0.5 is the push button - input
+						// P0.6 is the MPU interrupt pin - input
+						
+	P1DIR = 0xff;		// all inputs
+
+	return button_states;
+}
+
+#endif	// MOUSE_BUTTONS
+
+
 #define LED_PCKT_TOTAL		150
 #define LED_PCKT_LED_ON		2
 
@@ -232,6 +365,8 @@ int main(void)
 
 	pos_pckt.tracker_ver = CURR_PROTOCOL_VER;
 	aux_pckt.tracker_ver = CURR_PROTOCOL_VER;
+	
+	pos_pckt.mouse_buttons = 0;
 
 	hw_init();
 
@@ -254,7 +389,26 @@ int main(void)
 			aux_pckt.shutdown_counter = check_auto_shutdown(mpu_rd.gyro);
 
 			// set the recenter flag
+#if MOUSE_BUTTONS
+			pos_pckt.flags = send_recenter_cnt;
+			pos_pckt.mouse_buttons |= scan_mouse_buttons();
+			
+			{
+				uint8_t c;
+				uint16_t btn = pos_pckt.mouse_buttons;
+				for (c = 0; c < 12; c++)
+				{
+					if (btn & 1)
+						putchar('O');
+					else
+						putchar('.');
+					btn >>= 1;
+				}
+				dputs("");
+			}
+#else
 			pos_pckt.flags = (RECENTER_BTN == 0  ||  send_recenter_cnt != 0 ? FLAG_RECENTER : 0);
+#endif
 
 			// copy the quaternions
 			memcpy(pos_pckt.quat, mpu_rd.quat, sizeof(pos_pckt.quat));
@@ -279,6 +433,7 @@ int main(void)
 				++rf_pckt_ok;
 
 				send_recenter_cnt = check_ack();
+				pos_pckt.mouse_buttons = 0;		// reset the mouse button states
 			} else {
 				++rf_pckt_lost;
 			}
@@ -307,16 +462,14 @@ int main(void)
 				aux_pckt.temperature = mpu_read_temperature();
 
 				// disable the self test stuff for now
-				/*
-				if (mpu_rd.mag_sensor == 2)
-				{
-					aux_pckt.flags |= FLAG_MAG_VALID | FLAG_MAG_SENSOR;
-					hmc_self_test(aux_pckt.mag_self_text);
-				} else if (mpu_rd.mag_sensor == 1) {
-					aux_pckt.flags |= FLAG_MAG_VALID;
-					akm_self_test(aux_pckt.mag_self_text);
-				}
-				*/
+				//if (mpu_rd.mag_sensor == 2)
+				//{
+				//	aux_pckt.flags |= FLAG_MAG_VALID | FLAG_MAG_SENSOR;
+				//	hmc_self_test(aux_pckt.mag_self_text);
+				//} else if (mpu_rd.mag_sensor == 1) {
+				//	aux_pckt.flags |= FLAG_MAG_VALID;
+				//	akm_self_test(aux_pckt.mag_self_text);
+				//}
 
 				// send the packet and check the ACK
 				if (rf_tracker_send_message(&aux_pckt, sizeof(aux_pckt)))

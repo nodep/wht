@@ -37,11 +37,12 @@ extern hid_joystick_report_t	usb_joystick_report;
 
 typedef struct
 {
-	uint8_t	report_id;		// == MOUSE_REPORT_ID
+	uint8_t		report_id;		// == MOUSE_REPORT_ID
 
-	int16_t	x;
-	int16_t	y;
-	int16_t	wheel;
+	int16_t		x;
+	int16_t		y;
+	int16_t		wheel;
+	uint8_t		buttons;
 
 } hid_mouse_report_t;
 

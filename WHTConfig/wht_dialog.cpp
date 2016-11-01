@@ -206,7 +206,7 @@ void WHTDialog::OnInit()
 
 	_status_bar.SetParts(parts, STATBAR_NUM_PARTS);
 
-	_status_bar.SetPartText(STATBAR_VERSION, L"v1.3a  (" + get_date_str() + L")");
+	_status_bar.SetPartText(STATBAR_VERSION, L"v1.3c  (" + get_date_str() + L")");
 
 	// start the timer (10Hz)
 	SetTimer(GetHandle(), 1, 100, NULL);
@@ -305,10 +305,12 @@ void WHTDialog::OnControl(int ctrlID, int notifyID, HWND hWndCtrl)
 		_raw_input.Unbind(bf_disable_toggle);
 
 	} else if (ctrlID == IDC_BTN_CUSTOM_CURVE) {
+
 		if (_custom_curves.IsValid())
 			_custom_curves.BringToTop();
 		else
 			_custom_curves.CreateDlg(IDD_CUSTOM_CURVES, 0);
+
 	} else if (ctrlID == IDC_EDT_LOW_VOLTAGE) {
 
 		IniFile::GetIni().WriteDouble(L"BatteryMonitor", L"LowVoltage", _wtof(_edt_low_voltage.GetText().c_str()));

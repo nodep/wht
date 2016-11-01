@@ -402,59 +402,6 @@ int16_t ref_euler[3], prev_euler[3];
 int16_t modulo[3];
 bool init_ref_mouse = true;
 
-/*
-//#define MOUSE_NEUTRAL_FACT	230
-
-void do_mouse(void)
-{
-	__xdata int16_t* pDest;
-	int16_t delta, raw_delta;
-	uint8_t c;
-	
-	if (init_ref_mouse)
-	{
-		for (c = 0; c < 3; c++)
-		{
-			ref_euler[c] = euler[c];
-			modulo[c] = 0;
-		}
-		
-		init_ref_mouse = false;
-	}
-	
-	// make the deltas
-	pDest = &usb_mouse_report.x;
-	for (c = 0; c < 3; c++)
-	{
-		raw_delta = euler[c] - ref_euler[c];
-		
-		if (pSettings->mouse_fact[c] == 0)
-		{
-			// the axis is disabled
-			delta = modulo[c] = 0;
-		} else if (pSettings->mouse_fact[c] < MOUSE_NEUTRAL_FACT) {
-			// divide the raw delta - lower sensitivity than default raw data from the sensors
-			delta = (raw_delta + modulo[c]) / (MOUSE_NEUTRAL_FACT - pSettings->mouse_fact[c] + 1);
-		} else { // if (pSettings->mouse_fact[c] > MOUSE_NEUTRAL_FACT)
-			// multiply the raw delta - higher sensitivity than default raw data from the sensors
-			delta = raw_delta * (pSettings->mouse_fact[c] - MOUSE_NEUTRAL_FACT + 1);
-		}
-		
-		pDest[c] = delta;
-		
-		prev_euler[c] = euler[c];
-	}
-	
-	if (pSettings->tracker_orient == 1)
-	{
-		// swap y and wheel
-		int16_t t = usb_mouse_report.y;
-		usb_mouse_report.y = usb_mouse_report.wheel;
-		usb_mouse_report.wheel = t;
-	}
-}
-*/
-
 void do_mouse(void)
 {
 	__xdata int16_t* pDest;
@@ -494,10 +441,28 @@ void do_mouse(void)
 	{
 		if (pSettings->mouse_sens[c] == 0)
 			pDest[c] = 0;
-		else {
+		else
 			pDest[c] /= (0x80 >> (pSettings->mouse_sens[c] - 1));
-		}
 	}
+	
+	// copy the mouse buttons
+	usb_mouse_report.buttons = pckt->mouse_buttons;
+
+	/*
+	{
+		uint8_t c;
+		uint16_t btn = usb_mouse_report.buttons;
+		for (c = 0; c < 12; c++)
+		{
+			if (btn & 1)
+				putchar('O');
+			else
+				putchar('.');
+			btn >>= 1;
+		}
+		dputs("");
+	}
+	*/
 }
 
 // makes a new mouse reference

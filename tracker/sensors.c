@@ -419,10 +419,12 @@ void mpu_read_compass(mpu_readings_t* pckt)
 		//dprintf("%d %d %d\n", pckt->mag[0], pckt->mag[1], pckt->mag[2]);
 
 		pckt->mag_sensor = 2;		// HMC
-		
+
+		/*
 		dprintf("%d %d %d R%cL%c\n", pckt->mag[0], pckt->mag[1], pckt->mag[2],
 								(buff[6] & HMC_STATUS_RDY) ? '1' : '0',
 								(buff[6] & HMC_STATUS_LOCK) ? '1' : '0');
+								*/
 	}
 }
 

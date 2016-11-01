@@ -24,7 +24,7 @@ __xdata FeatRep_DongleSettings default_settings =
 {
 	0,		// report_id		is_empty
 
-	1,		// active_devices	1 == joystick, 2 == mouse, 3 == both
+	3,		// active_devices	1 == joystick, 2 == mouse, 3 == both
 	1,		// tracker_orient	0 == on/off switch is to the right
 			//					1 == on/off switch is facing forward
 	0,		// yc_method
