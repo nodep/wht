@@ -293,12 +293,6 @@ void main(void)
 			// send the report if the endpoint is not busy
 			if (mouse_packet_ready  &&  (in2cs & 0x02) == 0)
 			{
-				dprintf("--------- s=%d\n", sizeof(usb_mouse_report));
-				dprintf("b=%d\n", usb_mouse_report.buttons);
-				//dprintf("x=%d\n", usb_mouse_report.x);
-				//dprintf("y=%d\n", usb_mouse_report.y);
-				//dprintf("w=%d\n", usb_mouse_report.wheel);
-
 				// copy the mouse report into the endpoint buffer
 				memcpy(in2buf, &usb_mouse_report, sizeof(usb_mouse_report));
 

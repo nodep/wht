@@ -194,8 +194,6 @@ __code const uint8_t mouse_hid_report_descriptor[MOUSE_HID_REPORT_DESC_SIZE] =
 	0x09, 0x01,					//     Usage (Pointer)
 	0xA1, 0x00,					//     Collection (Physical)
 	0x85, MOUSE_REPORT_ID,		//         Report ID
-
-	// x, y and wheel
 	0x05, 0x01,					//         Usage Page (Generic Desktop Ctrls)
 	0x09, 0x30,					//         Usage (X)
 	0x09, 0x31,					//         Usage (Y)
@@ -205,34 +203,6 @@ __code const uint8_t mouse_hid_report_descriptor[MOUSE_HID_REPORT_DESC_SIZE] =
 	0x75, 0x10,					//         Report Size (16)
 	0x95, 0x03,					//         Report Count (3)
 	0x81, 0x06,					//         Input (Data,Variable,Relative,No wrap,Linear,Preferred State,No Null position,Bit Field)
-
-	// buttons
-	0x05, 0x09,					//         Usage Page (Button)
-	0x19, 0x01,					//         Usage Minimum (1)
-	0x29, 0x08,					//         Usage Maximum (8)
-	0x15, 0x00,					//         Logical Minimum (0)
-	0x25, 0x01,					//         Logical Maximum (1)
-	0x75, 0x01,					//         Report Size (1)
-	0x95, 0x08,					//         Report Count (8)
-	0x81, 0x02,					//         Input (Data,Variable,Absolute,No wrap,Linear,Preferred State,No Null position,Bit Field)
-
-	/*
-	0x19, 0x09,					//         Usage Minimum (9)
-	0x29, 0x10,					//         Usage Maximum (16)
-	0x15, 0x00,					//         Logical Minimum (0)
-	0x25, 0x01,					//         Logical Maximum (1)
-	0x75, 0x01,					//         Report Size (1)
-	0x95, 0x08,					//         Report Count (8)
-	0x81, 0x02,					//         Input (Data,Variable,Absolute,No wrap,Linear,Preferred State,No Null position,Bit Field)
-	*/
-	
-	/*
-	// padding
-	0x75, 0x04,					//         Report Size (4)
-	0x95, 0x01,					//         Report Count (1)
-	0x81, 0x01,					//         Input (Constant,Array,Absolute,No wrap,Linear,Preferred State,No Null position,Bit Field)
-	*/
-
 	0xC0,						//     End Collection
 	0xC0,						// End Collection
 };

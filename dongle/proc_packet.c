@@ -258,23 +258,6 @@ void do_mag(__xdata int16_t* mag)
 	if (++delta_ndx == DELTA_LOG_SIZE)
 		delta_ndx = 0;
 
-	/*
-	// count the number of times the mag data is ahead or behind the yaw we got from the quaternions
-	if (mag_delta > 0)
-	{
-		if (consec_count > 0)
-			++consec_count;
-		else
-			consec_count = 1;
-	} else {
-		if (consec_count < 0)
-			--consec_count;
-		else
-			consec_count = -1;
-	}*/
-
-	// HKM8553L ?
-	//if (pckt->flags & FLAG_MAG_SENSOR)
 	{
 		int16_t filtered_delta = delta_sum / DELTA_LOG_SIZE;
 		const int16_t abs_filtered_delta = abs(filtered_delta);
@@ -305,13 +288,7 @@ void do_mag(__xdata int16_t* mag)
 		}
 		
 		mag_correction += filtered_delta;
-
-	//} else { // AK8975A
-	//	mag_correction += (consec_count / 8) * 16;
 	}
-
-	//if (dbgEmpty())
-	//	dprintf("%6d %3d %6d\n", mag_correction, consec_count, mag_delta);
 }
 
 #define SAMPLES_FOR_AUTOCENTER_BITS		6
@@ -427,7 +404,7 @@ void do_mouse(void)
 		prev_euler[c] = euler[c];
 	}
 
-	// do the orinetation swap
+	// do the orientation swap
 	if (pSettings->tracker_orient == 1)
 	{
 		// swap y and wheel
@@ -444,25 +421,6 @@ void do_mouse(void)
 		else
 			pDest[c] /= (0x80 >> (pSettings->mouse_sens[c] - 1));
 	}
-	
-	// copy the mouse buttons
-	usb_mouse_report.buttons = pckt->mouse_buttons;
-
-	/*
-	{
-		uint8_t c;
-		uint16_t btn = usb_mouse_report.buttons;
-		for (c = 0; c < 12; c++)
-		{
-			if (btn & 1)
-				putchar('O');
-			else
-				putchar('.');
-			btn >>= 1;
-		}
-		dputs("");
-	}
-	*/
 }
 
 // makes a new mouse reference

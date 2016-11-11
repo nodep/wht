@@ -30,7 +30,7 @@ typedef struct
 {
 	uint8_t   /* 1 */	tracker_ver;	// the protocol version
 	uint8_t   /* 1 */	flags;			// bits defined in pos_packet_flags
-	uint16_t  /* 2 */	mouse_buttons;	// the lower 12 bits contain the states of the mouse buttons
+	uint16_t  /* 2 */	kbd_buttons;	// the lower 12 bits contain the states of the keyboard module buttons
 	int16_t   /* 8 */	quat[4];
 	int16_t   /* 6 */	mag[3];			// the magnetometer readings
 } tracker_position_packet_t;

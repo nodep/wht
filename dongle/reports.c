@@ -23,7 +23,6 @@ void reset_main_reports(void)
 	usb_joystick_report.z = 0;
 	
 	usb_mouse_report.report_id = MOUSE_REPORT_ID;
-	usb_mouse_report.buttons = 0;
 	usb_mouse_report.x = 0;
 	usb_mouse_report.y = 0;
 	usb_mouse_report.wheel = 0;

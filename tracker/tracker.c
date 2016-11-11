@@ -37,7 +37,7 @@ void hw_init()
 
 	P0CON = 0b01010101;	// turn on the pullup for the recenter button
 
-#if DBG_MODE > 0  &&  MOUSE_BUTTONS == 0
+#if DBG_MODE > 0  &&  KBD_BUTTONS == 0
 	// enable FMISO, FMOSI and FCSN as debug output pins
 	P1DIR = 0xfc;
 	P0DIR = 0x70;
@@ -213,9 +213,9 @@ uint8_t check_ack(void)
 	return 0;
 }
 
-#if MOUSE_BUTTONS
+#if KBD_MATRIX
 
-uint16_t scan_mouse_buttons(void)
+uint16_t scan_kbd_matrix(void)
 {
 	const uint16_t stab_delay = 150;
 
@@ -343,7 +343,7 @@ uint16_t scan_mouse_buttons(void)
 	return button_states;
 }
 
-#endif	// MOUSE_BUTTONS
+#endif	// KBD_MATRIX
 
 
 #define LED_PCKT_TOTAL		150
@@ -366,7 +366,7 @@ int main(void)
 	pos_pckt.tracker_ver = CURR_PROTOCOL_VER;
 	aux_pckt.tracker_ver = CURR_PROTOCOL_VER;
 	
-	pos_pckt.mouse_buttons = 0;
+	pos_pckt.kbd_buttons = 0;
 
 	hw_init();
 
@@ -389,13 +389,13 @@ int main(void)
 			aux_pckt.shutdown_counter = check_auto_shutdown(mpu_rd.gyro);
 
 			// set the recenter flag
-#if MOUSE_BUTTONS
+#if KBD_MATRIX  &&  DBG_MODE
 			pos_pckt.flags = send_recenter_cnt;
-			pos_pckt.mouse_buttons |= scan_mouse_buttons();
+			pos_pckt.kbd_buttons |= scan_kbd_matrix();
 			
 			{
 				uint8_t c;
-				uint16_t btn = pos_pckt.mouse_buttons;
+				uint16_t btn = pos_pckt.kbd_buttons;
 				for (c = 0; c < 12; c++)
 				{
 					if (btn & 1)
@@ -433,7 +433,7 @@ int main(void)
 				++rf_pckt_ok;
 
 				send_recenter_cnt = check_ack();
-				pos_pckt.mouse_buttons = 0;		// reset the mouse button states
+				pos_pckt.kbd_buttons = 0;		// reset the keyboard button states
 			} else {
 				++rf_pckt_lost;
 			}
