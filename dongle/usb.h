@@ -210,7 +210,7 @@ typedef struct
 	usb_ep_desc_t	ep2in;
 } usb_conf_desc_wht_t;
 
-#define JOYSTICK_HID_REPORT_DESC_SIZE	158
+#define JOYSTICK_HID_REPORT_DESC_SIZE	180
 #define MOUSE_HID_REPORT_DESC_SIZE		34
 #define USB_STRING_DESC_COUNT			4
 

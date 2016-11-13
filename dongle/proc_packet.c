@@ -505,7 +505,7 @@ bool process_packet(__xdata tracker_position_packet_t* pcktp)
 	usb_joystick_report.x = euler[YAW];
 	usb_joystick_report.y = euler[ROLL];
 	usb_joystick_report.z = euler[PITCH];
-
+	
 	if (pSettings->tracker_orient == 1)
 	{
 		// swap pitch and roll
@@ -513,6 +513,8 @@ bool process_packet(__xdata tracker_position_packet_t* pcktp)
 		usb_joystick_report.y = usb_joystick_report.z;
 		usb_joystick_report.z = t;
 	}
-	
+
+	usb_joystick_report.buttons = pckt->kbd_buttons;
+
 	return true;
 }
