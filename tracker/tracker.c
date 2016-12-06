@@ -389,10 +389,11 @@ int main(void)
 			aux_pckt.shutdown_counter = check_auto_shutdown(mpu_rd.gyro);
 
 			// set the recenter flag
-#if KBD_MATRIX  &&  DBG_MODE
+#if KBD_MATRIX
 			pos_pckt.flags = send_recenter_cnt;
 			pos_pckt.kbd_buttons |= scan_kbd_matrix();
 			
+# if DBG_MODE
 			{
 				uint8_t c;
 				uint16_t btn = pos_pckt.kbd_buttons;
@@ -406,6 +407,7 @@ int main(void)
 				}
 				dputs("");
 			}
+# endif
 #else
 			pos_pckt.flags = (RECENTER_BTN == 0  ||  send_recenter_cnt != 0 ? FLAG_RECENTER : 0);
 #endif
