@@ -252,9 +252,11 @@ enum protocol_version_e
 	pv_with_mouse = 2,	// version 2 supports mouse output
 	pv_ila = 3,			// version 3 added mag sens, swap x and wheel and sleep mode upgrade
 						// and versioning actually starts working from here
+	pv_kbd = 4,			// version 4 with 12 button charlieplexed keyboard module
+						// on the flashing connector
 };
 
-#define CURR_PROTOCOL_VER		pv_ila
+#define CURR_PROTOCOL_VER		pv_kbd
 
 // direction: dongle -> PC
 typedef struct

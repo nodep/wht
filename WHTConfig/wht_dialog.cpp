@@ -206,7 +206,7 @@ void WHTDialog::OnInit()
 
 	_status_bar.SetParts(parts, STATBAR_NUM_PARTS);
 
-	_status_bar.SetPartText(STATBAR_VERSION, L"v1.3c  (" + get_date_str() + L")");
+	_status_bar.SetPartText(STATBAR_VERSION, L"v1.3d  (" + get_date_str() + L")");
 
 	// start the timer (10Hz)
 	SetTimer(GetHandle(), 1, 100, NULL);
